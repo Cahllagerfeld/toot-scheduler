@@ -2,3 +2,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		--color-dark-0: #1c1c28;
+		--color-dark-1: #28293d;
+		--color-dark-2: #555770;
+		--color-dark-3: #8f90a6;
+		--color-dark-4: #c7c9d9;
+
+		--color-light-0: #e4e4eb;
+		--color-light-1: #ebebf0;
+		--color-light-2: #f2f2f5;
+		--color-light-3: #fafafc;
+		--color-light-4: #f9f9f9;
+
+		--color-primary-0: #3568d4;
+		--color-primary-1: #3e7bfa;
+		--color-primary-2: #6698fa;
+
+		--color-red-0: #e53535;
+		--color-red-1: #ff3b3b;
+		--color-red-2: #ff3b3b;
+		/* --color-red-3: #FF8080;
+    --color-red-4: #FFE5E5; */
+
+		--color-green-0: #05a660;
+		--color-green-1: #06c270;
+		--color-green-2: #39d98a;
+		/* --color-green-3: #57EBA1;
+    --color-green-4: #E3FFF1; */
+
+		--color-blue-0: #004fc4;
+		--color-blue-1: #0063f7;
+		--color-blue-2: #5b8def;
+		/* --color-blue-3: #9DBFF9;
+    --color-blue-4: #E5F0FF; */
+
+		--color-yellow-0: #e6b800;
+		--color-yellow-1: #ffcc00;
+		--color-yellow-2: #fddd48;
+		/* --color-yellow-3: #FDED72;
+    --color-yellow-4: #FFFEE6; */
+
+		--color-teal-0: #00b7c4;
+		--color-teal-1: #00cfde;
+		--color-teal-2: #73dfe7;
+		/* --color-teal-3: #A9EFF2;
+    --color-teal-4: #E6FFFF; */
+
+		--color-purple-0: #4d0099;
+		--color-purple-1: #6600cc;
+		--color-purple-2: #6600cc;
+		/* --color-purple-3: #DDA5E9;
+    --color-purple-4: #FFE6FF; */
+
+		--gradient-1: linear-gradient(147.14deg, #5b8def 6.95%, #0063f7 93.05%);
+		--gradient-2: linear-gradient(147.14deg, #ff8800 6.95%, #e63535 93.05%);
+		--gradient-3: linear-gradient(147.14deg, #3e7bfa 6.95%, #6600cc 93.05%);
+		--gradient-4: linear-gradient(147.14deg, #00cfde 6.95%, #05a660 93.05%);
+		--gradient-5: linear-gradient(145.51deg, #fddd48 7.21%, #00b7c4 94.47%);
+		--gradient-6: linear-gradient(147.14deg, #ff3b3b 6.95%, #6600cc 93.05%);
+		--gradient-7: linear-gradient(147.14deg, #73dfe7 6.95%, #0063f7 93.05%);
+		--gradient-8: linear-gradient(145.51deg, #ac5dd9 7.21%, #004fc4 94.47%);
+
+		--color-background: var(--color-light-4);
+		--color-text: var(--color-dark-1);
+		--color-text-important: var(--color-dark-1);
+	}
+
+	.dark {
+		--color-background: var(--color-dark-0);
+		--color-text: #fafafc99;
+		--color-text-important: #fafafcde;
+	}
+
+	body {
+		@apply bg-background text-text;
+	}
+}
