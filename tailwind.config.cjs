@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 const config = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
@@ -67,6 +69,9 @@ const config = {
 			'gradient-6': 'var(--gradient-6)',
 			'gradient-7': 'var(--gradient-7)',
 			'gradient-8': 'var(--gradient-8)'
+		},
+		fontFamily: {
+			sans: ['Manrope', ...defaultTheme.fontFamily.sans]
 		},
 		boxShadow: {
 			'-1': 'inset 0px 0.5px 4px rgba(96, 97, 112, 0.32)',
