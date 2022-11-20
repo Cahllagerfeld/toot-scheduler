@@ -1,10 +1,13 @@
 <script lang="ts">
 	import Card from '$lib/components/atoms/card.svelte';
 	import Button from '$lib/components/atoms/button.svelte';
+	import Input from '../lib/components/atoms/input.svelte';
+
+	let value = '';
 </script>
 
 <Card class="mt-8">
-	<h1>Welcome to SvelteKit</h1>
+	<h1 class="text-label">Welcome to SvelteKit</h1>
 	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </Card>
 
@@ -12,5 +15,7 @@
 	<h1>Welcome to SvelteKit</h1>
 	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
 </Card>
+
+<Input placeholder="Please add Access Token" label="Access Token" id="Test" bind:value />
 
 <Button class="mt-4">Click me</Button>
