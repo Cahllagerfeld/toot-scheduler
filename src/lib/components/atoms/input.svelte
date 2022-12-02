@@ -14,7 +14,6 @@
 	on:change
 	bind:value
 	class="box-border w-full rounded-lg border-[1px] border-dark-4 bg-card py-2 px-4 focus:border-primary-main focus:shadow-inset-1 dark:border-dark-1 {className}"
-	type="text"
 	{...$$restProps}
 />
 
