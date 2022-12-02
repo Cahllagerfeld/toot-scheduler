@@ -66,18 +66,42 @@
 		--gradient-7: linear-gradient(147.14deg, #73dfe7 6.95%, #0063f7 93.05%);
 		--gradient-8: linear-gradient(145.51deg, #ac5dd9 7.21%, #004fc4 94.47%);
 
-		--color-background: var(--color-light-4);
+		--shadow-inset: inset 0px 0.5px 4px rgba(96, 97, 112, 0.32);
+		--shadow-card: 0px 0px 1px rgba(40, 41, 61, 0.08), 0px 0.5px 2px rgba(96, 97, 112, 0.16);
+		--shadow-button: 0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16);
+		--shadow-menu: 0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16);
+		--shadow-raised: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
+		--shadow-popover: 0px 2px 8px rgba(40, 41, 61, 0.04), 0px 16px 24px rgba(96, 97, 112, 0.16);
+		--shadow-dialog: 0px 2px 8px rgba(40, 41, 61, 0.08), 0px 20px 32px rgba(96, 97, 112, 0.24);
+
+		--color-background: #f7f7fa;
 		--color-text: var(--color-dark-1);
 		--color-text-important: var(--color-dark-1);
+		--color-card: var(--color-light-4);
 	}
 
 	.dark {
 		--color-background: var(--color-dark-0);
 		--color-text: #fafafc99;
 		--color-text-important: #fafafcde;
+		--color-card: var(--color-dark-1);
+
+		--shadow-inset: inset 0px 0.5px 4px rgba(0, 0, 0, 0.32);
+		--shadow-card: 0px 0px 1px rgba(40, 41, 61, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.32);
+		--shadow-button: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.32);
+		--shadow-menu: 0px 0px 2px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.32);
+		--shadow-raised: 0px 2px 4px rgba(0, 0, 0, 0.04), 0px 8px 16px rgba(0, 0, 0, 0.32);
+		--shadow-popover: 0px 2px 8px rgba(0, 0, 0, 0.04), 0px 16px 24px rgba(0, 0, 0, 0.32);
+		--shadow-dialog: 0px 2px 8px rgba(0, 0, 0, 0.08), 0px 20px 32px rgba(0, 0, 0, 0.32);
 	}
 
 	body {
 		@apply bg-background text-text;
+	}
+}
+
+@layer utilities {
+	.default-transition {
+		@apply transition-all delay-[50ms] duration-200;
 	}
 }

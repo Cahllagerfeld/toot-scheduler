@@ -1,10 +1,12 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 const config = {
+	darkMode: 'class',
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	theme: {
 		colors: {
+			card: 'var(--color-card)',
 			transparent: 'transparent',
 			inherit: 'inherit',
 			background: 'var(--color-background)',
@@ -73,15 +75,6 @@ const config = {
 		fontFamily: {
 			sans: ['Manrope', ...defaultTheme.fontFamily.sans]
 		},
-		boxShadow: {
-			'-1': 'inset 0px 0.5px 4px rgba(96, 97, 112, 0.32)',
-			1: '0px 0px 1px rgba(40, 41, 61, 0.08), 0px 0.5px 2px rgba(96, 97, 112, 0.16)',
-			2: '0px 0px 1px rgba(40, 41, 61, 0.04), 0px 2px 4px rgba(96, 97, 112, 0.16)',
-			3: '0px 0px 2px rgba(40, 41, 61, 0.04), 0px 4px 8px rgba(96, 97, 112, 0.16)',
-			4: '0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16)',
-			5: '0px 2px 8px rgba(40, 41, 61, 0.04), 0px 16px 24px rgba(96, 97, 112, 0.16)',
-			6: '0px 2px 8px rgba(40, 41, 61, 0.08), 0px 20px 32px rgba(96, 97, 112, 0.24)'
-		},
 		fontSize: {
 			'display-1': ['4rem', { lineHeight: '77.45px', fontWeight: '700' }],
 			'display-2': ['3.5rem', { lineHeight: '67.77px' }],
@@ -92,6 +85,16 @@ const config = {
 			body: ['1rem', { lineHeight: '1.5rem' }],
 			small: ['0.75rem', { lineHeight: '15px' }],
 			label: ['0.75rem', { lineHeight: '16px' }]
+		},
+		boxShadow: {
+			none: 'none',
+			'inset-1': 'var(--shadow-inset)',
+			default: 'var(--shadow-card)',
+			button: 'var(--shadow-button)',
+			menu: 'var(--shadow-menu)',
+			raised: 'var(--shadow-raised)',
+			popover: 'var(--shadow-popover)',
+			dialog: 'var(--shadow-dialog)'
 		}
 	},
 
