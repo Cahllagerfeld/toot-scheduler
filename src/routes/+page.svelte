@@ -1,21 +1,47 @@
 <script lang="ts">
 	import Card from '$lib/components/atoms/card.svelte';
 	import Button from '$lib/components/atoms/button.svelte';
-	import Input from '../lib/components/atoms/input.svelte';
+	import Input from '$lib/components/atoms/input.svelte';
 
-	let value = '';
+	let accessToken = '';
+	let serverURL = '';
+
+	const loginHandler = async () => {
+		const endpoint = `${serverURL}/api/v1/accounts/verify_credentials`;
+		const headers = { Authorization: `Bearer ${accessToken}` };
+
+		const res = await fetch(endpoint, { method: 'GET', headers });
+		if (res.ok) {
+			const data = await res.json();
+			console.log(data);
+		}
+	};
 </script>
 
 <Card class="mt-8">
-	<h1 class="text-label">Welcome to SvelteKit</h1>
-	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+	<form on:submit|preventDefault={loginHandler} class="flex flex-col gap-4">
+		<div>
+			<Input
+				type="password"
+				required
+				bind:value={accessToken}
+				label="Token"
+				placeholder="Your token"
+				id="access-token"
+			/>
+		</div>
+		<div>
+			<Input
+				type="text"
+				required
+				bind:value={serverURL}
+				label="Server URL"
+				placeholder="Your Server URL"
+				id="server-url"
+			/>
+		</div>
+		<div>
+			<Button type="submit">Login</Button>
+		</div>
+	</form>
 </Card>
-
-<Card class="mt-8">
-	<h1>Welcome to SvelteKit</h1>
-	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-</Card>
-
-<Input placeholder="Please add Access Token" label="Access Token" id="Test" bind:value />
-
-<Button class="mt-4">Click me</Button>
