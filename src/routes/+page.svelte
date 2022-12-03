@@ -33,22 +33,22 @@
 		<form on:submit|preventDefault={loginHandler} class="flex flex-col gap-4">
 			<div>
 				<Input
-					type="password"
-					required
-					bind:value={accessToken}
-					label="Token"
-					placeholder="Your token"
-					id="access-token"
-				/>
-			</div>
-			<div>
-				<Input
 					type="text"
 					required
 					bind:value={serverURL}
 					label="Server URL"
 					placeholder="Your Server URL"
 					id="server-url"
+				/>
+			</div>
+			<div>
+				<Input
+					type="password"
+					required
+					bind:value={accessToken}
+					label="Token"
+					placeholder="Your token"
+					id="access-token"
 				/>
 			</div>
 			<div>
