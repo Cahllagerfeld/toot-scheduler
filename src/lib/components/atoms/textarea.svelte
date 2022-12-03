@@ -1,15 +1,15 @@
 <script lang="ts">
-	export let value: string | number;
+	export let value: string;
 	export let label = '';
 	let className = '';
 	export { className as class };
-	export let id: string;
+	export let id = '';
 </script>
 
 {#if label}
 	<label class="block cursor-pointer text-label" for={id}>{@html label}</label>
 {/if}
-<input
+<textarea
 	{id}
 	on:change
 	bind:value
