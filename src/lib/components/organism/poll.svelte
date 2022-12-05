@@ -11,13 +11,18 @@
 		newOption = '';
 		pollForm.reset();
 	};
+
+	const removeOption = (index: number) => {
+		options = options.filter((_, i) => i !== index);
+	};
 </script>
 
-<section>
-	<ul>
-		{#each options as option}
-			<li>
+<section class="flex flex-col gap-4">
+	<ul class="space-y-4">
+		{#each options as option, index}
+			<li class="flex items-center justify-between">
 				{option}
+				<Button on:click={() => removeOption(index)} variant="red">Delete</Button>
 			</li>
 		{/each}
 	</ul>

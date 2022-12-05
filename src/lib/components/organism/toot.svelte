@@ -34,19 +34,21 @@
 	};
 </script>
 
-<form bind:this={tootForm} class="flex flex-col gap-4" on:submit|preventDefault={handleSchedule}>
-	<div>
-		<Textarea label="Your toot" required rows="6" class="resize-none" bind:value={toot} />
-	</div>
-	<div>
-		<input
-			required
-			class="rounded-lg border border-dark-4 p-2 focus:border-primary-main focus:shadow-inset-1 dark:border-dark-1"
-			bind:value={scheduled}
-			type="datetime-local"
-		/>
-	</div>
-	<div>
-		<Button disabled={disableTextarea} type="submit">Schedule</Button>
-	</div>
-</form>
+<section>
+	<form bind:this={tootForm} class="flex flex-col gap-4" on:submit|preventDefault={handleSchedule}>
+		<div>
+			<Textarea label="Your toot" required rows="6" class="resize-none" bind:value={toot} />
+		</div>
+		<div>
+			<input
+				required
+				class="rounded-lg border border-dark-4 p-2 focus:border-primary-main focus:shadow-inset-1 dark:border-dark-1"
+				bind:value={scheduled}
+				type="datetime-local"
+			/>
+		</div>
+		<div>
+			<Button disabled={disableTextarea} type="submit">Schedule</Button>
+		</div>
+	</form>
+</section>
