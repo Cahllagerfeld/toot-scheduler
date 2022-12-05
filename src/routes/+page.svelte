@@ -4,30 +4,21 @@
 	import Input from '$lib/components/atoms/input.svelte';
 	import Poll from '$lib/components/organism/poll.svelte';
 	import Toot from '../lib/components/organism/toot.svelte';
+	import { enhance } from '$app/forms';
+	import type { ActionData } from './$types';
+
+	export let form: ActionData;
 
 	let accessToken = '';
 	let serverURL = '';
-
-	let disableTextarea = true;
-
-	const loginHandler = async () => {
-		const endpoint = `${serverURL}/api/v1/accounts/verify_credentials`;
-		const headers = { Authorization: `Bearer ${accessToken}` };
-
-		const res = await fetch(endpoint, { method: 'GET', headers });
-		if (res.ok) {
-			const data = await res.json();
-			console.log(data);
-			disableTextarea = false;
-		}
-	};
 </script>
 
 <div class="flex flex-col gap-8">
 	<Card class="mt-8">
-		<form on:submit|preventDefault={loginHandler} class="flex flex-col gap-4">
+		<form method="post" action="?/loginMastodon" use:enhance class="flex flex-col gap-4">
 			<div>
 				<Input
+					name="server-url"
 					type="text"
 					required
 					bind:value={serverURL}
@@ -38,6 +29,7 @@
 			</div>
 			<div>
 				<Input
+					name="access-token"
 					type="password"
 					required
 					bind:value={accessToken}
@@ -53,7 +45,7 @@
 	</Card>
 
 	<Card>
-		<Toot {accessToken} {disableTextarea} {serverURL} />
+		<Toot {accessToken} disableTextarea={!form?.tootDisabled} {serverURL} />
 	</Card>
 	<Card>
 		<Poll />
