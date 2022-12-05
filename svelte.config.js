@@ -12,6 +12,7 @@ const config = {
 	],
 
 	kit: {
+		csrf: false,
 		adapter: adapter(),
 		files: {
 			lib: 'src/lib'
