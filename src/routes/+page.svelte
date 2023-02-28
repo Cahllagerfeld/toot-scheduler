@@ -1,23 +1,23 @@
 <script lang="ts">
-	import Card from '$lib/components/atoms/card.svelte';
-	import Button from '$lib/components/atoms/button.svelte';
-	import Input from '$lib/components/atoms/input.svelte';
-	import Textarea from '../lib/components/atoms/textarea.svelte';
-	import { zonedTimeToUtc } from 'date-fns-tz';
+	import Card from "$lib/components/atoms/card.svelte";
+	import Button from "$lib/components/atoms/button.svelte";
+	import Input from "$lib/components/atoms/input.svelte";
+	import Textarea from "../lib/components/atoms/textarea.svelte";
+	import { zonedTimeToUtc } from "date-fns-tz";
 
-	let accessToken = '';
-	let serverURL = '';
+	let accessToken = "";
+	let serverURL = "";
 
 	let scheduled = Date.now();
 	let disableTextarea = true;
-	let toot = '';
+	let toot = "";
 	let tootForm: HTMLFormElement;
 
 	const loginHandler = async () => {
 		const endpoint = `${serverURL}/api/v1/accounts/verify_credentials`;
 		const headers = { Authorization: `Bearer ${accessToken}` };
 
-		const res = await fetch(endpoint, { method: 'GET', headers });
+		const res = await fetch(endpoint, { method: "GET", headers });
 		if (res.ok) {
 			const data = await res.json();
 			console.log(data);
@@ -30,11 +30,11 @@
 		const utcTime = zonedTimeToUtc(scheduled, timezone).toISOString();
 
 		const endpoint = `${serverURL}/api/v1/statuses`;
-		const headers = { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' };
+		const headers = { Authorization: `Bearer ${accessToken}`, "Content-Type": "application/json" };
 		const body = { status: toot, scheduled_at: utcTime };
 
 		const res = await fetch(endpoint, {
-			method: 'POST',
+			method: "POST",
 			headers,
 			body: JSON.stringify(body)
 		});

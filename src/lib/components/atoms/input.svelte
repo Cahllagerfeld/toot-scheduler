@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let value: string | number;
-	export let label = '';
-	let className = '';
+	export let label = "";
+	let className = "";
 	export { className as class };
 	export let id: string;
 </script>

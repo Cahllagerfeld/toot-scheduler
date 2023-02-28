@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let value: string;
-	export let label = '';
-	let className = '';
+	export let label = "";
+	let className = "";
 	export { className as class };
-	export let id = '';
+	export let id = "";
 </script>
 
 {#if label}

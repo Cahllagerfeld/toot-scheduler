@@ -1,14 +1,14 @@
 <script lang="ts">
-	let className = '';
+	let className = "";
 	export { className as class };
 	export let disabled = false;
-	export let variant: 'primary' | 'green' = 'primary';
-	export let type: 'submit' | 'button' = 'button';
+	export let variant: "primary" | "green" = "primary";
+	export let type: "submit" | "button" = "button";
 
 	const colorMap = {
 		primary:
-			'bg-primary-main hover:bg-primary-lighter focus:outline-primary-lighter active:bg-primary-darker',
-		green: ''
+			"bg-primary-main hover:bg-primary-lighter focus:outline-primary-lighter active:bg-primary-darker",
+		green: ""
 	};
 </script>
 
